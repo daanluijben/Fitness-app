@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+  color: #1a1a2e;
+  padding-bottom: 80px;
+}
+
+.header {
+  background: linear-gradient(135deg, #6C63FF, #4ECDC4);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card h2 { font-size: 1.2rem; margin-bottom: 8px; }
+.card h3 { font-size: 1rem; margin-bottom: 8px; color: #6C63FF; }
+.card p  { color: #666; font-size: 0.9rem; }
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 6px 0;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: #6C63FF;
+}
+
+.btn-primary {
+  display: block;
+  width: calc(100% - 24px);
+  margin: 0 12px 12px;
+  padding: 14px;
+  background: linear-gradient(135deg, #6C63FF, #4ECDC4);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  background: #f0f0ff;
+  color: #6C63FF;
+  border: 1.5px dashed #6C63FF;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: #999;
+  transition: color 0.2s;
+}
+
+.nav-btn span {
+  font-size: 0.65rem;
+  margin-top: 2px;
+}
+
+.nav-btn.active {
+  color: #6C63FF;
+}
+
+.oefening-blok {
+  background: #f8f8ff;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 8px 0;
+}
+
+.oefening-blok input {
+  margin: 4px 0;
+}
+
+.set-rij {
+  display: flex;
+  gap: 8px;
+}
+
+.set-rij input {
+  flex: 1;
+}
+
+.workout-item, .schema-item, .meting-item {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 10px 0;
+}
+
+.workout-item:last-child, .schema-item:last-child, .meting-item:last-child {
+  border-bottom: none;
+}
+
+.workout-item h4 { font-size: 0.95rem; color: #1a1a2e; }
+.workout-item p  { font-size: 0.8rem; color: #999; margin-top: 2px; }
+
+.record-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.9rem;
+}
+
+canvas {
+  width: 100% !important;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#6C63FF" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Fitness App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigatie -->
+  <nav class="bottom-nav">
+    <button onclick="showPage('dashboard')" id="nav-dashboard" class="nav-btn active">🏠<span>Home</span></button>
+    <button onclick="showPage('workout')" id="nav-workout" class="nav-btn">💪<span>Workout</span></button>
+    <button onclick="showPage('schema')" id="nav-schema" class="nav-btn">📋<span>Schema</span></button>
+    <button onclick="showPage('voortgang')" id="nav-voortgang" class="nav-btn">📈<span>Voortgang</span></button>
+    <button onclick="showPage('lichaam')" id="nav-lichaam" class="nav-btn">⚖️<span>Lichaam</span></button>
+  </nav>
+
+  <!-- Dashboard -->
+  <div id="page-dashboard" class="page active">
+    <div class="header"><h1>Fitness App</h1></div>
+    <div class="card">
+      <h2>Welkom terug! 👋</h2>
+      <p id="dashboard-streak">Laad gegevens...</p>
+    </div>
+    <div class="card">
+      <h3>Laatste workout</h3>
+      <p id="dashboard-laatste">Nog geen workouts gelogd.</p>
+    </div>
+    <div class="card">
+      <h3>Gewicht</h3>
+      <p id="dashboard-gewicht">Nog geen gewicht ingevoerd.</p>
+    </div>
+  </div>
+
+  <!-- Workout loggen -->
+  <div id="page-workout" class="page">
+    <div class="header"><h1>Workout Loggen</h1></div>
+    <div class="card">
+      <input type="text" id="workout-naam" placeholder="Naam workout (bijv. Borst dag)" />
+      <div id="oefeningen-lijst"></div>
+      <button class="btn-secondary" onclick="voegOefeningToe()">+ Oefening toevoegen</button>
+    </div>
+    <button class="btn-primary" onclick="slaWorkoutOp()">Workout opslaan</button>
+    <div class="card">
+      <h3>Geschiedenis</h3>
+      <div id="workout-geschiedenis"></div>
+    </div>
+  </div>
+
+  <!-- Schema's -->
+  <div id="page-schema" class="page">
+    <div class="header"><h1>Trainingsschema's</h1></div>
+    <div class="card">
+      <input type="text" id="schema-naam" placeholder="Schema naam (bijv. Push Pull Legs)" />
+      <div id="schema-dagen"></div>
+      <button class="btn-secondary" onclick="voegDagToe()">+ Dag toevoegen</button>
+    </div>
+    <button class="btn-primary" onclick="slaSchemaOp()">Schema opslaan</button>
+    <div class="card">
+      <h3>Mijn schema's</h3>
+      <div id="schema-lijst"></div>
+    </div>
+  </div>
+
+  <!-- Voortgang -->
+  <div id="page-voortgang" class="page">
+    <div class="header"><h1>Voortgang</h1></div>
+    <div class="card">
+      <h3>Selecteer oefening</h3>
+      <select id="voortgang-oefening" onchange="toonVoortgang()">
+        <option value="">-- Kies een oefening --</option>
+      </select>
+    </div>
+    <div class="card">
+      <canvas id="voortgang-chart" height="200"></canvas>
+    </div>
+    <div class="card">
+      <h3>Records 🏆</h3>
+      <div id="voortgang-records"></div>
+    </div>
+  </div>
+
+  <!-- Lichaam -->
+  <div id="page-lichaam" class="page">
+    <div class="header"><h1>Lichaamsmetingen</h1></div>
+    <div class="card">
+      <h3>Meting toevoegen</h3>
+      <input type="number" id="lichaam-gewicht" placeholder="Gewicht (kg)" step="0.1" />
+      <input type="number" id="lichaam-vetpercentage" placeholder="Vetpercentage (%)" step="0.1" />
+      <input type="number" id="lichaam-taille" placeholder="Taille (cm)" step="0.5" />
+      <button class="btn-primary" onclick="slaMeetingOp()">Opslaan</button>
+    </div>
+    <div class="card">
+      <h3>Geschiedenis</h3>
+      <div id="lichaam-geschiedenis"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
